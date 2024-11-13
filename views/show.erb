@@ -1,0 +1,10 @@
+<h2><%= h(@memo["title"]) %></h2>
+<p><%= h(@memo["content"]) %></p>
+
+<a href="/memos/<%= @memo["id"] %>/edit">変更</a>
+<a href="/memos">メモ一覧に戻る</a>
+
+<form action="/memos/<%= @memo["id"] %>" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button type="submit">削除</button>
+</form>

@@ -1,0 +1,5 @@
+---
+glob: "**/views/**/*.erb"
+linters:
+  RequireInputAutocomplete:
+    enabled: false

@@ -13,6 +13,10 @@ def read_memos
   JSON.parse(File.read('data/memos.json'))
 end
 
+def find_memo(memo_id)
+  read_memos.find { |memo| memo['id'] == memo_id.to_i}
+end
+
 def save_memos(memos)
   File.write('data/memos.json', JSON.pretty_generate(memos))
 end
@@ -39,22 +43,21 @@ post '/memos' do
 end
 
 get '/memos/:memo_id' do
-  @memo = read_memos.find { |memo| memo['id'] == params[:memo_id].to_i }
+  @memo = find_memo(params[:memo_id])
   halt 404, 'メモが見つかりません' unless @memo
   erb :show
 end
 
 get '/memos/:memo_id/edit' do
-  @memo = read_memos.find { |memo| memo['id'] == params[:memo_id].to_i }
+  @memo = find_memo(params[:memo_id])
   halt 404, 'メモが見つかりません' unless @memo
   erb :edit
 end
 
 patch '/memos/:memo_id' do
   memos = read_memos
-  memo = memos.find { |m| m['id'] == params[:memo_id].to_i }
+  memo = find_memo(params[:memo_id])
   halt 404, 'メモが見つかりません' unless memo
-
   memo['title'] = params[:title]
   memo['content'] = params[:content]
   save_memos(memos)

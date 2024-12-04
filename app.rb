@@ -14,7 +14,7 @@ def read_memos
 end
 
 def find_memo(memo_id)
-  read_memos.find { |memo| memo['id'] == memo_id.to_i}
+  read_memos.find { |memo| memo['id'] == memo_id.to_i }
 end
 
 def save_memos(memos)
@@ -33,9 +33,9 @@ end
 post '/memos' do
   memos = read_memos
   new_memo = {
-    'id' => memos.empty? ? 1 : memos.last['id'] + 1,
-    'title' => params[:title],
-    'content' => params[:content]
+    id: memos.empty? ? 1 : memos.last['id'] + 1,
+    title: params[:title],
+    content: params[:content]
   }
   memos << new_memo
   save_memos(memos)

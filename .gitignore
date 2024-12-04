@@ -1,2 +1,4 @@
 vendor/
 .ruby-version
+
+data/memos.json

@@ -11,6 +11,8 @@ gem 'webrick'
 
 gem 'json'
 
+gem 'pg'
+
 group :development do
   gem 'rubocop-fjord', require: false
 end

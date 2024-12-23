@@ -71,6 +71,7 @@ GEM
     parser (3.3.6.0)
       ast (~> 2.4.1)
       racc
+    pg (1.5.9)
     racc (1.8.1)
     rack (3.1.8)
     rack-protection (4.0.0)
@@ -135,6 +136,7 @@ PLATFORMS
 DEPENDENCIES
   erb_lint
   json
+  pg
   rackup (~> 2.1)
   rubocop-fjord
   sinatra

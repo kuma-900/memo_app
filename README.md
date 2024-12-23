@@ -50,8 +50,7 @@ $ bundle install
 
 ```
 memo_app/
-├── data/
-│   └── memos.json       # メモデータが保存されるJSONファイル
+|
 ├── views/               # 各ページのビュー（HTMLテンプレート）
 │   ├── edit.erb         # メモ編集ページのテンプレート
 │   ├── index.erb        # メモ一覧ページのテンプレート
